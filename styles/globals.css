@@ -2,20 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Add a fancy animated background */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-gradient {
+  background: linear-gradient(270deg, #1e293b, #0f172a, #1e293b);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(10px);
+}
+
+
+.drag-animate {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.drag-animate:active {
+  transform: scale(1.1); /* Scale up on drag */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6); /* Add glow on drag */
+}
+
+
+@keyframes drag-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

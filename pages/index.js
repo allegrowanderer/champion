@@ -1,114 +1,153 @@
-import Image from "next/image";
-import localFont from "next/font/local";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="min-h-screen text-white bg-gradient-to-r from-gray-900 via-black to-gray-900 animate-gradient">
+      <Head>
+        <title>Score Champion AI - AI Sports Predictions</title>
+        <meta
+          name="description"
+          content="Score Champion AI - Your AI-powered sports betting assistant."
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Header */}
+      <header className="py-6 bg-gray-800 bg-opacity-80 backdrop-blur-md">
+  <div className="container mx-auto flex justify-between items-center">
+    <a href="/">
+      <img
+        src="/logo.png"
+        alt="Score Champion AI Logo"
+        className="h-24 w-auto" /* Reduced to 2x size */
+      />
+    </a>
+    <nav className="flex items-center space-x-6">
+      <a
+        href="https://x.com/ScoreChampionAI"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/xlogo.png"
+          alt="X Logo"
+          className="w-12 h-12 hover:scale-105 transition-transform"
+        />
+      </a>
+      <a
+        href="https://t.me/ScoreChampionBot"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/telegram.png"
+          alt="Telegram Logo"
+          className="w-8 h-8 hover:scale-105 transition-transform"
+        />
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+      {/* Hero Section */}
+      <main className="container mx-auto px-4 py-10">
+        <section className="text-center">
+          <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400 mb-4">
+            AI Sports Betting Predictions
+          </h2>
+          <p className="text-lg text-gray-300 mb-6">
+            Take your sports betting to the next level with AI-powered
+            predictions. Gain insights, maximize your chances, and stay ahead of
+            the game.
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+            href="https://virtuals.io"
+            className="drag-animate bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-3 rounded shadow-lg transform hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Buy Now on VIRTUALS.IO
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        </section>
+
+        {/* About Section */}
+        <section className="mt-16">
+          <div className="bg-gradient-to-r from-gray-800 to-gray-900 p-8 rounded shadow-lg">
+            <h3 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-6 text-center">
+              About Score Champion AI
+            </h3>
+            <p className="text-gray-300 text-lg mb-8 leading-loose text-center">
+              Score Champion AI is a cutting-edge Telegram bot designed to
+              revolutionize sports betting. Powered by advanced artificial
+              intelligence, Score Champion AI analyzes vast amounts of sports
+              data to provide accurate and reliable predictions across multiple
+              sports, including football, basketball, and more.
+            </p>
+            <div className="grid grid-cols-1 gap-8 items-center text-center">
+              <ul className="space-y-8">
+                <li className="flex items-center justify-center">
+                  <div className="w-10 h-10 flex justify-center items-center text-2xl mr-4">
+                    🤖
+                  </div>
+                  <span className="text-gray-300 text-lg leading-loose">
+                    <strong>AI-Driven Insights:</strong> Accurate predictions powered by AI.
+                  </span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <div className="w-10 h-10 flex justify-center items-center text-2xl mr-4">
+                    📊
+                  </div>
+                  <span className="text-gray-300 text-lg leading-loose">
+                    <strong>Multi-Sport Coverage:</strong> Predictions for football, basketball, and more.
+                  </span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <div className="w-10 h-10 flex justify-center items-center text-2xl mr-4">
+                    💡
+                  </div>
+                  <span className="text-gray-300 text-lg leading-loose">
+                    <strong>User-Friendly:</strong> Access the bot easily via Telegram.
+                  </span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <div className="w-10 h-10 flex justify-center items-center text-2xl mr-4">
+                    ⏱️
+                  </div>
+                  <span className="text-gray-300 text-lg leading-loose">
+                    <strong>Real-Time Updates:</strong> Get timely, accurate betting tips.
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="text-center mt-12">
+              <p className="text-lg text-gray-300 leading-loose">
+                Don’t miss out on the future of sports betting. Join the growing
+                community of Score Champion AI users and experience the power of AI
+                predictions.
+              </p>
+              <a
+                href="https://t.me/ScoreChampionBot"
+                className="mt-8 inline-block bg-gradient-to-r from-purple-400 to-pink-400 text-white px-6 py-3 rounded-full text-lg font-bold shadow-lg hover:scale-105 transition-transform"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Try Telegram Bot
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="py-6 bg-gray-800 text-center bg-opacity-80 backdrop-blur-md">
+        <p className="text-gray-400">
+          © 2024 Score Champion AI. All Rights Reserved.
+        </p>
       </footer>
     </div>
   );
