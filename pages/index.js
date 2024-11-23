@@ -23,7 +23,7 @@ export default function Home() {
       <img
         src="/logo.png"
         alt="Score Champion AI Logo"
-        className="h-24 w-auto" /* Reduced to 2x size */
+        className="h-24 w-auto" 
       />
     </a>
     <nav className="flex items-center space-x-6">
@@ -66,7 +66,7 @@ export default function Home() {
             the game.
           </p>
           <a
-            href="https://virtuals.io"
+            href="https://fun.virtuals.io/agents/0x2584c157b72f58eE1EC1c267f69fAc211B15D33E"
             className="drag-animate bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 py-3 rounded shadow-lg transform hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
